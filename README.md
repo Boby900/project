@@ -2,6 +2,7 @@
 
 A modern web application that allows users to customize umbrellas with different colors and upload their own logos. Built with React, TypeScript, and Vite for a smooth development experience.
 
+LIVE = https://boby900.github.io/project/
 
 ### Prerequisites
 
