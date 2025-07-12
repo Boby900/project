@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umbrella Customizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">Umbrella Customizer</h1>
+            <p class="subtitle">Create your custom branded umbrella</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Umbrella Preview Section -->
+            <section class="preview-section">
+                <div class="umbrella-container">
+                    <div class="umbrella-wrapper">
+                        <img id="umbrellaImage" src="src/assets/Blue umbrella.png" alt="Umbrella" class="umbrella-image">
+                        <div id="logoOverlay" class="logo-overlay hidden">
+                            <img id="logoImage" src="" alt="Logo" class="logo-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customization Panel -->
+            <section class="customization-panel">
+                <!-- Color Selection -->
+                <div class="color-section">
+                    <h3 class="section-title">Choose Color</h3>
+                    <div class="color-swatches">
+                        <button class="color-swatch blue active" data-color="blue" aria-label="Blue umbrella">
+                            <span class="color-circle blue-color"></span>
+                            <span class="color-name">Blue</span>
+                        </button>
+                        <button class="color-swatch yellow" data-color="yellow" aria-label="Yellow umbrella">
+                            <span class="color-circle yellow-color"></span>
+                            <span class="color-name">Yellow</span>
+                        </button>
+                        <button class="color-swatch pink" data-color="pink" aria-label="Pink umbrella">
+                            <span class="color-circle pink-color"></span>
+                            <span class="color-name">Pink</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Logo Upload Section -->
+                <div class="logo-section">
+                    <h3 class="section-title">Add Your Logo</h3>
+                    <div class="upload-area">
+                        <input type="file" id="logoUpload" accept="image/*" class="file-input" aria-label="Upload logo">
+                        <label for="logoUpload" class="upload-label">
+                            <div class="upload-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </div>
+                            <span class="upload-text">Click to upload logo</span>
+                            <span class="upload-subtext">PNG, JPG up to 5MB</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Logo Controls -->
+                    <div id="logoControls" class="logo-controls hidden">
+                        <div class="control-group">
+                            <label for="logoSize" class="control-label">Logo Size</label>
+                            <input type="range" id="logoSize" min="50" max="150" value="100" class="slider">
+                            <span id="logoSizeValue" class="control-value">100%</span>
+                        </div>
+                        
+                        <button id="removeLogo" class="remove-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"></polyline>
+                                <path d="m19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"></path>
+                            </svg>
+                            Remove Logo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="resetBtn">Reset</button>
+                    <button class="btn btn-primary" id="downloadBtn">Download Preview</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-indicator hidden">
+            <div class="spinner"></div>
+            <span>Processing...</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
